@@ -1,3 +1,4 @@
+
 <?php
 
 class TicketTheatre extends Ticket{

@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="style/style.css">
 <?php
 
 //classparent
 
-class Ticket{
+abstract class Ticket{
 
 
 public function __construct(string $date, string $placeChoice, float $tarifAdulte, float $tarifEnfant)
@@ -22,5 +23,7 @@ public function __construct(string $date, string $placeChoice, float $tarifAdult
         <?php
         
     }
+
+    abstract public function afficherTicket();
 }
 ?>

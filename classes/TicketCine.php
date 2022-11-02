@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style/style.css">
 <?php
 class TicketCine extends Ticket{
     public string $filmChoice;
