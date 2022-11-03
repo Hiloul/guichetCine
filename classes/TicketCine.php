@@ -6,11 +6,12 @@ class TicketCine extends Ticket{
     protected int $age;
     public int $seance;
     
-    public function __construct(string $date, string $placeChoice, 
-    float $tarifAdulte, float $tarifEnfant, string $filmChoice,
+    public function __construct(
+    string $date, int $placeChoice, 
+    float $tarifs, string $filmChoice,
     int $salle, int $age, int $seance)
     {
-        parent::__construct($date, $placeChoice, $tarifAdulte, $tarifEnfant);
+        parent::__construct($date, $placeChoice, $tarifs);
         $this->filmChoice=$filmChoice;
         $this->salle=$salle;
         $this->seance=$seance;
