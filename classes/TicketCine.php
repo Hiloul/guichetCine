@@ -23,8 +23,13 @@ public function getAge(){
     return $this->age."ans";
 }
 
-    public function afficherTicket(){
-        echo $this->filmChoice." ".$this->getSalle()." ".$this->seance." ".$this->getAge();
+    public function afficherTicket(){?>
+        <h2>Ticket Cinéma</h2>
+        <p>Film:<?=$this->filmChoice?> </p>
+        <p>Salle: <?=$this->getSalle()?></p>
+        <p>Seance: <?=$this->seance?></p>
+        <p>Age: <?=$this->getAge()?></p>
+        <?php
     }
 
 }

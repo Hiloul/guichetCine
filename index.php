@@ -9,7 +9,7 @@ $cine1->afficherTicket();
 echo '<br>';
 // var_dump($cine1);
 
-$theatre1= new TicketTheatre("22/07","devant",5.99,3.99,"mouuuf",18,19.30);
+$theatre1= new TicketTheatre("22/07","devant",5.99,3.99,"mouuuf le chat qui Deuh",18,19.30);
 $theatre1->afficherTicket();
 echo '<br>';
 // var_dump($theatre1);

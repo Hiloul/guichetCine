@@ -4,7 +4,10 @@
 //classparent
 
 abstract class Ticket{
-
+   public string $date;
+    public string $placeChoice;
+    public  float $tarifAdulte;
+     public  float $tarifEnfant;
 
 public function __construct(string $date, string $placeChoice, float $tarifAdulte, float $tarifEnfant)
 {

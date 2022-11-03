@@ -16,14 +16,19 @@ class TicketTheatre extends Ticket{
         $this->heureEntracte=$heureEntracte;
     }
 public function getHeureDebut(){
-return $this->heureDebutSeance;
+return $this->heureDebutSeance.'H';
 }
 public function getEntract(){
-    return $this->heureEntracte;
+    return $this->heureEntracte.'H';
 }
 
-    public function afficherTicket(){
-        echo $this->pieceChoice." ".$this->getHeureDebut()." ".$this->getEntract();
+    public function afficherTicket(){?>
+    <h2>Ticket Thêatre</h2>
+    <p>Film:<?=$this->pieceChoice?> </p>
+    <p>Heure: <?=$this->getHeureDebut()?></p>
+    <p>Entracte: <?=$this->getEntract()?></p>
+    <?php
+       
     }
 
 }
