@@ -5,14 +5,6 @@
 
 
 
-if (isset($_POST['submitTicket'])){
-       
-    
-    $ticket1 = new Ticket($_POST['date'],
-    $_POST['placeChoice'],
-    $_POST['tarifs'],
-    );
-}
 
 
 
@@ -40,10 +32,3 @@ public function __construct(string $date, int $placeChoice, float $tarifs)
    
 }
 ?>
-<?php
-    if (isset($_POST['submitTicket'])){
-        $ticket1 ->showAll();
-      
-    }
-
-    ?>

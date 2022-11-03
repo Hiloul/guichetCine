@@ -2,46 +2,35 @@
 require __DIR__."/classes/Ticket.php";
 require __DIR__."/classes/TicketCine.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+if (isset($_POST['submitTicket'])){
        
     
-    $cine1 = new Ticket($_POST['date'],
-    $_POST['placeChoice'],
-    $_POST['tarifs'],
-    ,
+    $cine1 = new TicketCine($_POST['filmChoice'],
+    $_POST['salle'],
+    $_POST['age'],$_POST['seance'],
     );
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guichet</title>
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
 
-<h1>Guichet</h1>
-
-<form action="classes/Ticket.php" method="post">
+<h1>Guichet Cine</h1>
+<form action="index-cine.php" method="post">
     <p>
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date">
+        <label for="filmChoice">Film:</label>
+        <input type="text" id="filmChoice" name="filmChoice">
     </p>
     <p>
-        <label for="place">Place:</label>
-        <input type="text" id="place" name="place">
+        <label for="salle">Salle:</label>
+        <input type="number" id="salle" name="salle">
     </p>
-    
     <p>
-        <label for="tarifs">Tarifs: </label>
-        <label for="adulte">Adulte</label>
-        <input type="checkbox" name="tarifAdulte" id="tarifadulte">
-        <label for="enfant">Enfant</label>
-        <input type="checkbox" name="tarifEnfant" id="tarifenfant">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+    </p>
+    <p>
+        <label for="seance">Seance: </label>
+        <input type="number" name="seance">
        
     </p>
     <p>
@@ -50,11 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
 </form>
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $cine1 ->showAll();
+    if (isset($_POST['submitTicket'])){
+        $cine1 ->afficherTicket();
       
     }
 
     ?>
-</body>
-</html>

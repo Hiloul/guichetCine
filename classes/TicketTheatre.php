@@ -6,11 +6,10 @@ class TicketTheatre extends Ticket{
     protected int $heureDebutSeance;
     protected float $heureEntracte;
 
-    public function __construct(string $date, int $placeChoice, 
-    float $tarifs, string $pieceChoice,
+    public function __construct(string $pieceChoice,
     int $heureDebutSeance, float $heureEntracte)
     {
-        parent::__construct($date, $placeChoice, $tarifs);
+        parent::__construct($pieceChoice, $heureDebutSeance, $heureEntracte);
         $this->pieceChoice=$pieceChoice;
         $this->heureDebutSeance=$heureDebutSeance;
         $this->heureEntracte=$heureEntracte;
@@ -23,12 +22,12 @@ public function getEntract(){
 }
 
     public function afficherTicket(){?>
-    <form action="" id="ticketT">
+    
     <h2>Ticket Thêatre</h2>
     <p>Film:<?=$this->pieceChoice?> </p>
     <p>Heure: <?=$this->getHeureDebut()?></p>
     <p>Entracte: <?=$this->getEntract()?></p>
-    </form>
+   
     <?php
        
     }

@@ -3,13 +3,18 @@ require __DIR__."/classes/Ticket.php";
 require __DIR__."/classes/TicketCine.php";
 require __DIR__."/classes/TicketTheatre.php";
 
-$ticket1= new Ticket("20/05",5,10.99,5.99);
-$ticket1->afficherTicket();
+if (isset($_POST['submitTicket'])){
+       
+    
+    $ticket1 = new Ticket($_POST['date'],
+    $_POST['placeChoice'],
+    $_POST['tarifs'],
+    );
+}
 
-
-$cine1= new TicketCine("22/08",6,10.99,"Matrix",2,18,2);
-$cine1->afficherTicket();
-echo '<br>';
+// $cine1= new TicketCine("22/08",6,10.99,"Matrix",2,18,2);
+// $cine1->afficherTicket();
+// echo '<br>';
 // var_dump($cine1);
 
 $theatre1= new TicketTheatre("22/07",7,5.99,"Piece de theatre",18,19.30);
@@ -35,14 +40,14 @@ echo '<br>';
 
 <h1>Guichet</h1>
 
-<form action="classes/TicketCine.php" method="post">
+<form action="index.php" method="post">
     <p>
         <label for="date">Date:</label>
         <input type="date" id="date" name="date">
     </p>
     <p>
-        <label for="place">Place:</label>
-        <input type="number" id="place" name="place">
+        <label for="placeChoice">Place:</label>
+        <input type="number" id="placeChoice" name="placeChoice">
     </p>
     <p>
         <label for="tarifs">Tarifs: </label>
@@ -54,6 +59,12 @@ echo '<br>';
     </p>
     
 </form>
+<?php
+    if (isset($_POST['submitTicket'])){
+        $ticket1 ->showAll();
+      
+    }
 
+    ?>
 </body>
 </html>
