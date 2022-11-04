@@ -11,7 +11,8 @@
 //classparent
 
 class Ticket{
-  
+  public string $date;
+  public int $placeChoice; 
 public function __construct(string $date, int $placeChoice, float $tarifs)
 {
     $this->date = date('d-m-Y',strtotime($date));
