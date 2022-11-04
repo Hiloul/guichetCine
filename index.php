@@ -3,6 +3,7 @@ require __DIR__."/classes/Ticket.php";
 require __DIR__."/classes/TicketCine.php";
 require __DIR__."/classes/TicketTheatre.php";
 require __DIR__."index-cine.php";
+require __DIR__."index-theatre.php";
 
 if (isset($_POST['submitTicket'])){
        
